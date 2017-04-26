@@ -78,6 +78,7 @@ public class ParserTest {
   public void testParseAll() {
     String agentString1 = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; fr; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5,gzip(gfe),gzip(gfe)";
     String agentString2 = "Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3";
+    String agentString3 = "SoundCloud/2017.04.18-release (Android 4.1.1; Samsung GT-I9082)";
 
     Client expected1 = new Client(new UserAgent("Firefox", "3", "5", "5"),
                                   new OS("Mac OS X", "10", "4", null, null),
@@ -85,9 +86,13 @@ public class ParserTest {
     Client expected2 = new Client(new UserAgent("Mobile Safari", "5", "1", null),
                                   new OS("iOS", "5", "1", "1", null),
                                   new Device("iPhone"));
+    Client expected3 = new Client(new UserAgent("SoundCloud", "2017", "04", "18"),
+                                  new OS("Android", "4", "1", "1", null),
+                                  new Device("Other"));
 
     assertThat(parser.parse(agentString1), is(expected1));
     assertThat(parser.parse(agentString2), is(expected2));
+    assertThat(parser.parse(agentString3), is(expected3));
   }
 
   @Test
