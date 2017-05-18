@@ -2029,3 +2029,10 @@ test_cases:
     patch: '2'
     patch_minor:
 
+
+  - user_agent_string: 'SoundCloud-Android/14.08.21-17 (Android 4.4.2; samsung SAMSUNG-SGH-I337)'
+    family: 'Android'
+    major: '4'
+    minor: '4'
+    patch: '2'
+    patch_minor:

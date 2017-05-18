@@ -10,6 +10,9 @@ user_agent_parsers:
   - regex: '(SoundCloud-Android)/(\d+)\.(\d+)\.(\d+)'
     family_replacement: 'SoundCloud'
 
+  - regex: '(Android) (\d+)\.(\d+)\.(\d+)'
+    os_replacement: 'Android'
+
   # HbbTV standard defines what features the browser should understand.
   # but it's like targeting "HTML5 browsers", effective browser support depends on the model
   # See os_parsers if you want to target a specific TV
